@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI类型比较</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    body {
+      background-color: #f5f7fa;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .comparison {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .category {
+      width: 100%;
+      border-bottom: 1px solid #eee;
+    }
+    .category-title {
+      background: #f0f4f8;
+      padding: 10px 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .category-title i {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    .ai-types {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .ai-type {
+      flex: 1;
+      min-width: 200px;
+      padding: 15px;
+      position: relative;
+    }
+    .ai-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid;
+    }
+    .ai-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .ai-title {
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+    }
+    .ai-subtitle {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+    }
+    .ai-content {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .traditional {
+      border-right: 1px solid #eee;
+    }
+    .traditional .ai-header {
+      border-bottom-color: #3498db;
+    }
+    .agi {
+      border-right: 1px solid #eee;
+    }
+    .agi .ai-header {
+      border-bottom-color: #9b59b6;
+    }
+    .agent .ai-header {
+      border-bottom-color: #2ecc71;
+    }
+    .status-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .traditional .status-badge {
+      background-color: #3498db;
+      color: white;
+    }
+    .agi .status-badge {
+      background-color: #9b59b6;
+      color: white;
+    }
+    .agent .status-badge {
+      background-color: #2ecc71;
+      color: white;
+    }
+    .example {
+      margin-top: 10px;
+      padding: 8px;
+      background: #f8f9fa;
+      border-radius: 5px;
+      font-style: italic;
+      color: #555;
+    }
+    .example::before {
+      content: "例如: ";
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .ai-type {
+        flex: 100%;
+        border-right: none !important;
+        border-bottom: 1px solid #eee;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>人工智能发展演进对比</h1>
+    </div>
+    
+    <div class="comparison">
+      <!-- 任务范围 -->
+      <div class="category">
+        <div class="category-title">
+          <i class="fas fa-tasks"></i> 任务范围
+        </div>
+        <div class="ai-types">
+          <div class="ai-type traditional">
+            <span class="status-badge">已普及</span>
+            <div class="ai-header">
+              <i class="ai-icon fas fa-robot"></i>
+              <div class="ai-title">传统AI工具</div>
+              <div class="ai-subtitle">单一技能（只会一招）</div>
+            </div>
+            <div class="ai-content">
+              专注于解决特定领域的单一问题，无法跨领域应用或处理复杂任务链。
+              <div class="example">语音识别、图像分类、特定领域的问答系统</div>
+            </div>
+          </div>
+          
+          <div class="ai-type agi">
+            <span class="status-badge">未实现</span>
+            <div class="ai-header">
+              <i class="ai-icon fas fa-brain"></i>
+              <div class="ai-title">AGI（理想形态）</div>
+              <div class="ai-subtitle">全领域智能（无所不能）</div>
+            </div>
+            <div class="ai-content">
+              能够理解、学习并应用任何人类能够完成的智力任务，无领域限制。
+              <div class="example">科幻电影中的AI助手，能理解任何任务并完美执行</div>
+            </div>
+          </div>
+          
+          <div class="ai-type agent">
+            <span class="status-badge">正爆发</span>
+            <div class="ai-header">
+              <i class="ai-icon fas fa-cogs"></i>
+              <div class="ai-title">AI Agent（当下爆发）</div>
+              <div class="ai-subtitle">多步骤任务链（擅长组合拳）</div>
+            </div>
+            <div class="ai-content">
+              能够分解复杂任务，规划并执行多个步骤，组合不同能力完成目标。
+              <div class="example">自动规划行程、多轮对话完成预订、复杂问题解决</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 自主程度 -->
+      <div class="category">
+        <div class="category-title">
+          <i class="fas fa-sliders-h"></i> 自主程度
+        </div>
+        <div class="ai-types">
+          <div class="ai-type traditional">
+            <div class="ai-content">
+              <i class="fas fa-hand-point-right"></i> <strong>被动响应</strong>：需要明确指令才能执行，每次只能处理一个请求。
+              <div class="example">必须等待用户输入明确指令才能行动</div>
+            </div>
+          </div>
+          
+          <div class="ai-type agi">
+            <div class="ai-content">
+              <i class="fas fa-lightbulb"></i> <strong>完全自主</strong>：具备自我意识和判断，能主动识别需求并采取行动。
+              <div class="example">理解用户潜在需求，提前规划并执行最优解决方案</div>
+            </div>
+          </div>
+          
+          <div class="ai-type agent">
+            <div class="ai-content">
+              <i class="fas fa-bullseye"></i> <strong>目标驱动</strong>：给定目标后能自主规划路径并执行，不需要详细指导。
+              <div class="example">只需告知"帮我规划三日游"，自动完成所有细节安排</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 学习方式 -->
+      <div class="category">
+        <div class="category-title">
+          <i class="fas fa-graduation-cap"></i> 学习方式
+        </div>
+        <div class="ai-types">
+          <div class="ai-type traditional">
+            <div class="ai-content">
+              <i class="fas fa-lock"></i> <strong>固定模型</strong>：训练完成后模型固定，无法自主学习新知识。
+              <div class="example">需要重新训练或更新才能适应新情况</div>
+            </div>
+          </div>
+          
+          <div class="ai-type agi">
+            <div class="ai-content">
+              <i class="fas fa-dna"></i> <strong>类人学习</strong>：能够像人类一样通过各种方式持续学习和适应。
+              <div class="example">自主获取知识，理解概念并创造性应用</div>
+            </div>
+          </div>
+          
+          <div class="ai-type agent">
+            <div class="ai-content">
+              <i class="fas fa-sync-alt"></i> <strong>结果反馈优化</strong>：通过任务执行结果不断优化自身表现。
+              <div class="example">根据用户反馈调整策略，不断提高服务质量</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 实现阶段 -->
+      <div class="category">
+        <div class="category-title">
+          <i class="fas fa-chart-line"></i> 实现阶段
+        </div>
+        <div class="ai-types">
+          <div class="ai-type traditional">
+            <div class="ai-content">
+              <i class="fas fa-check-circle"></i> <strong>广泛应用</strong>：技术成熟，已在各行业广泛落地应用。
+              <div class="example">智能客服、推荐系统、语音助手等</div>
+            </div>
+          </div>
+          
+          <div class="ai-type agi">
+            <div class="ai-content">
+              <i class="fas fa-flask"></i> <strong>理论研究</strong>：仍处于理论探索阶段，尚未实现。
+              <div class="example">科研机构的前沿研究课题，距离实用化尚远</div>
+            </div>
+          </div>
+          
+          <div class="ai-type agent">
+            <div class="ai-content">
+              <i class="fas fa-rocket"></i> <strong>加速落地</strong>：技术正在快速发展并开始商业化应用。
+              <div class="example">大型科技公司开始推出Agent产品和服务</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 酒旅应用 -->
+      <div class="category">
+        <div class="category-title">
+          <i class="fas fa-hotel"></i> 酒旅应用
+        </div>
+        <div class="ai-types">
+          <div class="ai-type traditional">
+            <div class="ai-content">
+              <i class="fas fa-comment-dots"></i> <strong>简单客服问答</strong>：回答预设的常见问题，处理简单预订。
+              <div class="example">回答"酒店有健身房吗？"等固定问题</div>
+            </div>
+          </div>
+          
+          <div class="ai-type agi">
+            <div class="ai-content">
+              <i class="fas fa-magic"></i> <strong>科幻电影中的场景</strong>：全方位个性化服务，预测需求并完美执行。
+              <div class="example">完全理解客人偏好，提供超出预期的个性化体验</div>
+            </div>
+          </div>
+          
+          <div class="ai-type agent">
+            <div class="ai-content">
+              <i class="fas fa-link"></i> <strong>全链路智能运营</strong>：从咨询到预订、入住、体验全程智能服务。
+              <div class="example">自动安排行程、协调多方服务、解决突发问题</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
